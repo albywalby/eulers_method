@@ -8,32 +8,47 @@ fn f(x: f32, y:f32) -> f32 {
     2.0 * y + 2.0 * x * x
 }
 
-fn eulers_method(x: f32,y: f32) {
-    let result = f(x, y);
+fn eulers_method(x_i: f32, x_f: f32, y: f32, h: f32) {
+
+    let result = f(x_i, y);
     println!("{result}");
 }
 
 fn main() {
     println!("Hello, world!");
+
+    let mut x_final: String = String::new();    
+    let mut x_init: String = String::new();
+    let mut y_val: String = String::new();
+    let mut h_val: String = String::new();
+
+    //input for x final
+    println!("Please enter the final value for x: ");
+    io::stdin()
+        .read_line(&mut x_final)
+        .expect("Could not read line");
+    let x_final: f32 = x_final.trim().parse().expect("Please type a number");
     
-    let mut _x: String = String::new();
-    let mut _y: String = String::new();
-
-    println!("Please enter a value for x: ");
-
+    //input for x initial
+    println!("Please enter an initial value for x: ");
     io::stdin()
-        .read_line(&mut _x)
+        .read_line(&mut x_init)
         .expect("Could not read line");
+    let x_init: f32 = x_init.trim().parse().expect("Please type a number");
 
-    let _x: f32 = _x.trim().parse().expect("Please type a number");
-
+    //input for y value
     println!("Please enter a value for y: ");
-
     io::stdin()
-        .read_line(&mut _y)
+        .read_line(&mut y_val)
         .expect("Could not read line");
+    let y_val:f32 = y_val.trim().parse().expect("Please type a number!");
 
-    let _y:f32 = _y.trim().parse().expect("Please type a number!");
+    //input for h value
+    println!("Please enter a value for h: ");
+    io::stdin()
+        .read_line(&mut h_val)
+        .expect("Could not read line");
+    let h_val: f32 = h_val.trim().parse().expect("Please type a number");
 
-    let _result = eulers_method(_x, _y);
+    let result = eulers_method(x_init, x_final, y_val, h_val);
 }
