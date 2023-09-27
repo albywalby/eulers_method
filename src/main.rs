@@ -35,5 +35,5 @@ fn main() {
 
     let _y:f32 = _y.trim().parse().expect("Please type a number!");
 
-    let result = eulers_method(_x, _y);
+    let _result = eulers_method(_x, _y);
 }
