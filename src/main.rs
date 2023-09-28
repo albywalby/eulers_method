@@ -8,7 +8,15 @@ fn f(x: f32, y:f32) -> f32 {
     2.0 * y + 2.0 * x * x
 }
 
-fn eulers_method(x_i: f32, x_f: f32, y: f32, h: f32) {
+fn eulers_method(x_i: f32, x_f: f32, _y: f32, _h: f32) {
+    let mut x: f32 = x_i;
+    let mut y: f32 = _y;
+    let mut temp: f32 = 0.0;
+
+    while x < x_f {
+        temp = f(x, y);
+
+    }
 
     let result = f(x_i, y);
     println!("{result}");
