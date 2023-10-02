@@ -41,6 +41,7 @@ fn main() {
         .expect("Could not read line");
     let h_val: f32 = h_val.trim().parse().expect("Please type a number");
 
+    // Euler's Method
     while x_init < x_final {
         let temp: f32 = f(x_init, y_val);
         println!("{x_init}, {y_val}");
@@ -48,6 +49,7 @@ fn main() {
         x_init += h_val;
     }
 
+    //print final values for x and y
     println!("Final x value: {x_init}");
     println!("Final y value: {y_val}");
 }
